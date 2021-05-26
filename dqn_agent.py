@@ -30,6 +30,7 @@ class Agent():
 		
 		# Update and synchronize Q-target with Q-network every UPDATE_EVERY steps
 		self.t_step = 0
+		print(device)
 
 	def act(self, state, eps):
 		state = torch.from_numpy(state).float().unsqueeze(0).to(device)
