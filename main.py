@@ -22,7 +22,7 @@ IS_TRAINING = WELCOME_PACKET.split(":")[1].lower() in ['true', '1', 'yes']
 
 print("Name:" + NAME)
 print("Is Training: " + str(IS_TRAINING))
-agent = Agent(state_size=49, action_size=6, seed=42)
+agent = Agent(state_size=196, action_size=6, seed=42)
 
 if path.exists(NAME + '.pth'):
     print("load network from " + NAME + ".pth")
