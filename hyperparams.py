@@ -1,6 +1,6 @@
 LR = 5e-3
 # LR = 5e-2
-GAMMA = 0.95
+GAMMA = 0.99
 UPDATE_EVERY = 4
 BATCH_SIZE = 32
 TAU = 1e-3

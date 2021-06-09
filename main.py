@@ -111,9 +111,10 @@ while True:
         scores_window.append(score)
         mean_score = np.mean(scores_window)
         # if ep_count % 100 == 0:
-        print(
-            f"\rGen: {generation}, Ep: {episode}, T: {isTraining}, Eps: {eps:.5f}, Score: {score:.2f}, Mean: {mean_score:.2f}",
-            end="\n")
+        if score > 0:
+            print(
+                f"\rGen: {generation}, Ep: {episode}, T: {isTraining}, Eps: {eps:.5f}, Score: {score:.2f}, Mean: {mean_score:.2f}",
+                end="\n")
 
         if generation != py_generation:
             py_generation = generation
