@@ -1,10 +1,12 @@
 import matplotlib.pyplot as plt
 import statistics
+import matplotlib
 import os
 
 import numpy as np
-
-folderPath = "/Users/capu/Documents/DeepQLearningBomberman/winrate"
+matplotlib.use('TkAgg')
+# folderPath = "/Users/capu/Documents/DeepQLearningBomberman/winrate"
+folderPath = "winrate"
 
 for file in os.listdir(folderPath):
     if file.endswith(".txt"):
