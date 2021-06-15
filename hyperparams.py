@@ -1,8 +1,8 @@
-LR = 5e-3
-# LR = 5e-2
+# LR = 5e-3
+LR = 5e-2
 GAMMA = 0.99
 UPDATE_EVERY = 4
-BATCH_SIZE = 32
+BATCH_SIZE = 8
 TAU = 1e-3
 BUFFER_SIZE = 100000
 

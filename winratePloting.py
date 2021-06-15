@@ -4,7 +4,7 @@ import matplotlib
 import os
 
 import numpy as np
-matplotlib.use('TkAgg')
+# matplotlib.use('TkAgg')
 # folderPath = "/Users/capu/Documents/DeepQLearningBomberman/winrate"
 folderPath = "winrate"
 

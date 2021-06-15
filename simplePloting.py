@@ -6,7 +6,7 @@ import numpy as np
 
 # folderPath = "/Users/capu/Documents/DeepQLearningBomberman/simple"
 folderPath = "simple"
-matplotlib.use('TkAgg')
+# matplotlib.use('TkAgg')
 
 for file in os.listdir(folderPath):
     if file.endswith(".txt"):

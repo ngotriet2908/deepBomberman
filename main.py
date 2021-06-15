@@ -46,7 +46,7 @@ py_generation = 1
 scores = []
 training_scores = []
 eval_scores = []
-eps_start = 1
+eps_start = 0.3
 eps_end = 0.01
 eps_decay = 0.99
 
@@ -68,14 +68,14 @@ while True:
                 if isTraining:
                     action = agent.act(state, eps)
                 else:
-                    action = agent.act(state, 0)
+                    action = agent.act(state, -1)
                 # print("action: " + str(action))
                 sock.sendall(str.encode(str(action) + "\n"))
             elif "R:" in data:
                 reward = int(data.split(':')[1])
                 done = data.split(':')[2].lower() in ['true', '1', 'yes']
                 next_state = np.asarray(data.split(':')[3].split('/'), dtype=np.float64, order='C')
-                # print(reward, next_state, done)
+                # print(reward)
                 if isTraining:
                     agent.step(state, action, reward, next_state, done)
                 score += reward
@@ -111,7 +111,7 @@ while True:
         scores_window.append(score)
         mean_score = np.mean(scores_window)
         # if ep_count % 100 == 0:
-        if score > 0:
+        if not isTraining:
             print(
                 f"\rGen: {generation}, Ep: {episode}, T: {isTraining}, Eps: {eps:.5f}, Score: {score:.2f}, Mean: {mean_score:.2f}",
                 end="\n")

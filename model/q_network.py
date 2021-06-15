@@ -15,7 +15,7 @@ class QNetwork(nn.Module):
 		# self.fc1 = nn.Linear(state_size, 128)
 		# self.fc2 = nn.Linear(128, 64)
 		# self.fc3 = nn.Linear(64, action_size)
-		#
+
 		self.fc1 = nn.Linear(state_size, 256)
 		self.fc2 = nn.Linear(256, action_size)
 
@@ -25,11 +25,11 @@ class QNetwork(nn.Module):
 		# x = F.relu(self.fc3(x))
 		# x = self.fc4(x)
 
-		# # x = F.relu(self.fc1(state))
-		# # x = F.relu(self.fc2(x))
-		# # x = self.fc3(x)
-		#
+		# x = F.relu(self.fc1(state))
+		# x = F.relu(self.fc2(x))
+		# x = self.fc3(x)
+
 		x = F.relu(self.fc1(state))
 		x = self.fc2(x)
-
+		#
 		return x
